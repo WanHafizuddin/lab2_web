@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smooth Auto Slider</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+    }
+
+    .slider {
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      width: calc(600px * 6); /* 5 images + 1 duplicate for smooth loop */
+      animation: slide 30s linear infinite;
+    }
+
+    .slides img {
+      width: 600px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      16.66% { transform: translateX(0); }
+
+      33.32% { transform: translateX(-600px); }
+      49.98% { transform: translateX(-1200px); }
+
+      66.64% { transform: translateX(-1800px); }
+      83.3%  { transform: translateX(-2400px); }
+
+      100%  { transform: translateX(-3000px); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+  <div class="slides">
+    <img src="https://picsum.photos/id/1015/600/400" alt="1">
+    <img src="https://picsum.photos/id/1016/600/400" alt="2">
+    <img src="https://picsum.photos/id/1018/600/400" alt="3">
+    <img src="https://picsum.photos/id/1020/600/400" alt="4">
+    <img src="https://picsum.photos/id/1024/600/400" alt="5">
+    <img src="https://picsum.photos/id/1015/600/400" alt="1-clone"> <!-- clone of 1st -->
+  </div>
+</div>
+
+</body>
+</html>
